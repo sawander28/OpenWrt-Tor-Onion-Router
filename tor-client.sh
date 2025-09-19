@@ -1,3 +1,5 @@
+# https://openwrt.org/docs/guide-user/services/tor/client
+
 # Install packages
 opkg update
 opkg install tor torsocks tor-geoip obfs4proxy

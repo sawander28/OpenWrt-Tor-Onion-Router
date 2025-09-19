@@ -1,7 +1,17 @@
 #!/bin/sh
+# https://openwrt.org/docs/guide-user/services/tor/extras
 
 ### Exit nodes ###
+
 # Exclude dubious exit nodes by their country codes.
+opkg update
+opkg install tor-geoip
+ 
+# Exclude exit nodes
+cat << EOF >> /etc/tor/custom
+ExcludeExitNodes {??}, {by}, {kz}, {ru}, {ua}
+EOF
+service tor restart
 
 ### Pluggable transports ###
 
