@@ -1,0 +1,15 @@
+AutomapHostsOnResolve 1
+AutomapHostsSuffixes .exit,.onion
+AvoidDiskWrites 1
+Bridge obfs4 142.132.164.215:1110 A4798D1CE7C76014B90369AE7E2E954F3B08F873 cert=1+ZwmARDicIffrNlxKIX8l1NPpZ6u+rlettKV87xsRekjxRcaMlFSdFWW99MKeHAgiDDRA iat-mode=0
+ClientTransportPlugin obfs2,obfs3,obfs4,webtunnel exec /usr/bin/obfs4proxy -enableLogging -logLevel DEBUG
+ControlPort 127.0.0.1:9052
+DNSPort 5353
+RunAsDaemon 0
+SocksPort 127.0.0.1:9050 IsolateDestAddr IsolateDestPort
+SocksPort 127.0.0.1:9062 IsolateDestAddr IsolateDestPort
+SocksPort 127.0.0.1:9063 NoIsolateDestAddr NoIsolateDestPort NoIsolateClientProtocol
+SocksPort 10.200.1.1:9050 IsolateSOCKSAuth KeepAliveIsolateSOCKSAuth ExtendedErrors
+TransPort 127.0.0.1:9040
+UseBridges 1
+WarnPlaintextPorts 23,109
